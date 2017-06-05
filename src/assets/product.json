@@ -1,0 +1,30 @@
+[
+  {
+    "name" : "macbook-air",
+    "price" : 990
+  },
+  {
+    "name" : "macbook-pro",
+    "price" : 123
+  },
+  {
+    "name" : "HP",
+    "price" : 1534
+  },
+  {
+    "name" : "lol",
+    "price" : 153412
+  },
+  {
+    "name" : "Spartan",
+    "price" : 15343673
+  },
+  {
+    "name" : "zzzz",
+    "price" : 68482
+  },
+  {
+    "name" : "HP",
+    "price" : 1534
+  }
+]
