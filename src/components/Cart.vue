@@ -1,30 +1,32 @@
 <template>
   <div class="">
-    <button v-on:click="toggleDropdown()">
-      Cart
-    </button>
-    <ul>
-      <li v-for="product in products">
-        Name : {{product.name}} Price : {{product.price}}
-      </li>
-    </ul>
-    <div class="box dropdown">
-      DROP
+    <div class="field">
+      <p class="control">
+        <a class="button is-primary">Cart</a>
+        <div class="box">
+          <li v-for="product in chosenProduct">Name : {{product.name}} Price : {{product.price}} <a class="button is-danger" v-on:click="removeProduct(product.id)">Remove</a></li> 
+        </div>
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
   data () {
     return {
-      products: [{ 'name': 'test', 'price': 0 }]
     }
   },
+  computed: {
+    ...mapGetters([
+      'chosenProduct'
+    ])
+  },
   methods: {
-    toggleDropdown () {
-      document.querySelector('dropdown').classList.toggle('is-open')
-    }
+    ...mapActions([
+      'removeProduct'
+    ])
   }
 }
 </script>
@@ -42,6 +44,4 @@ export default {
 .dropdown.is-open {
   display: block
 }
-
-
 </style>
